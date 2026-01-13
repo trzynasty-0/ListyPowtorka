@@ -13,19 +13,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/elementET"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:textSize="24sp"
-            android:inputType="text"
-            android:hint="Nowy element" />
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/elementET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nowy element"
+                android:inputType="text"
+                android:textSize="24sp" />
+
+            <Spinner
+                android:id="@+id/priorytetSp"
+                android:entries="@array/priorytet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/dodajB"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="@color/Crimson"
             android:textSize="24sp"
             android:text="Dodaj" />

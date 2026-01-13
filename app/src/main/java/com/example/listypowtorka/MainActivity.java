@@ -22,8 +22,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private Button dodajB;
-    private ArrayAdapter<String> arrayAdapter;
-    private ArrayList<String> rzeczyDoZrobienia;
+    private ArrayAdapter<Rzecz> arrayAdapter;
+    private ArrayList<Rzecz> rzeczyDoZrobienia;
     private EditText opisNotatki;
 
 
@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         opisNotatki = findViewById(R.id.elementET);
 
         rzeczyDoZrobienia = new ArrayList<>();
-        rzeczyDoZrobienia.add("Wyjście  do kina");
-        rzeczyDoZrobienia.add("Nauczyć się robienia list w mobilnej");
-        rzeczyDoZrobienia.add("Pomyśleć o projekcie");
+        rzeczyDoZrobienia.add(new Rzecz("Wyjście  do kina", (byte) 1));
+        rzeczyDoZrobienia.add(new Rzecz("Nauczyć się robienia list w mobilnej", (byte) 2));
+        rzeczyDoZrobienia.add(new Rzecz("Pomyśleć o projekcie", (byte) 0));
 
         arrayAdapter = new ArrayAdapter<>(
                 this,
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 rzeczyDoZrobienia);
 
         listView.setAdapter(arrayAdapter);
-
+/*
         dodajB.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -94,5 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        */
+
     }
 }
