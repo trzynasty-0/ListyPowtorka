@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ListyPowtorka</string>
+    <string-array name="Notatki">
+        <item>Zupy: chleb, masło, ser</item>
+        <item>Do zrobienia: obiad, umyć podłogi</item>
+        <item>Weekend: kino, spacer z psem </item>
+    </string-array>
 </resources>
