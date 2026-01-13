@@ -77,14 +77,16 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         TextView textView = (TextView) view;
-                        if(textView.getPaintFlags() == Paint.STRIKE_THRU_TEXT_FLAG){
+                        if(rzeczyDoZrobienia.get(i).getCzyWykonane()){
                             textView.setPaintFlags(0);
                             view.setBackgroundColor(Color.WHITE);
+                            rzeczyDoZrobienia.get(i).setCzyWykonane(false);
 
                         }
                         else{
                             textView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                             view.setBackgroundColor(Color.GRAY);
+                            rzeczyDoZrobienia.get(i).setCzyWykonane(true);
 
                         }
                     }
