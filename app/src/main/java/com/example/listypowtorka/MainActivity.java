@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<Rzecz> arrayAdapter;
     private ArrayList<Rzecz> rzeczyDoZrobienia;
     private EditText opisNotatki;
+    private Spinner priorytetSp;
 
 
     @Override
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         dodajB = findViewById(R.id.dodajB);
         listView = findViewById(R.id.lista);
         opisNotatki = findViewById(R.id.elementET);
+        priorytetSp = findViewById(R.id.priorytetSp);
 
         rzeczyDoZrobienia = new ArrayList<>();
         rzeczyDoZrobienia.add(new Rzecz("Wyjście  do kina", (byte) 1));
@@ -53,18 +56,22 @@ public class MainActivity extends AppCompatActivity {
                 rzeczyDoZrobienia);
 
         listView.setAdapter(arrayAdapter);
-/*
+
+
+
         dodajB.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String opis = opisNotatki.getText().toString();
-                        rzeczyDoZrobienia.add(opis);
+                        byte priorytet = (byte) priorytetSp.getSelectedItemPosition();
+                        rzeczyDoZrobienia.add(new Rzecz(opis, priorytet));
                         arrayAdapter.notifyDataSetChanged();
                         opisNotatki.setText("");
                     }
                 }
         );
+
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
@@ -94,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-        */
 
     }
 }
