@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <EditText
@@ -20,7 +20,7 @@
             android:ems="10"
             android:textSize="24sp"
             android:inputType="text"
-            android:text="Nowy element" />
+            android:hint="Nowy element" />
 
         <Button
             android:id="@+id/dodajB"
@@ -32,9 +32,9 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/lista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/Notatki"
         android:divider="@color/Crimson"
         android:dividerHeight="2dp"
         />
