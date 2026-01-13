@@ -1,6 +1,7 @@
 package com.example.listypowtorka;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
         rzeczyDoZrobienia = new ArrayList<>();
         rzeczyDoZrobienia.add("Wyjście  do kina");
-        rzeczyDoZrobienia.add("nauczyć sie");
-        rzeczyDoZrobienia.add("fdsjkfrz");
+        rzeczyDoZrobienia.add("Nauczyć się robienia list w mobilnej");
+        rzeczyDoZrobienia.add("Pomyśleć o projekcie");
 
         arrayAdapter = new ArrayAdapter<>(
                 this,
@@ -48,5 +49,17 @@ public class MainActivity extends AppCompatActivity {
                 rzeczyDoZrobienia);
 
         listView.setAdapter(arrayAdapter);
+
+        dodajB.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String opis = opisNotatki.getText().toString();
+                        rzeczyDoZrobienia.add(opis);
+                        arrayAdapter.notifyDataSetChanged();
+                        opisNotatki.setText("");
+                    }
+                }
+        );
     }
 }
